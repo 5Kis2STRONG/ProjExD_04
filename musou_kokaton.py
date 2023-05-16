@@ -140,6 +140,10 @@ class Bomb(pg.sprite.Sprite):
         if check_bound(self.rect) != (True, True):
             self.kill()
 
+class Gravity(pg.sprite.Sprite):
+    def __init__(self, bird: Bird, size: tuple, life: int):
+        super().__init__()
+        
 
 class Beam(pg.sprite.Sprite):
     """
@@ -197,7 +201,6 @@ class Explosion(pg.sprite.Sprite):
         self.image = self.imgs[self.life//10%2]
         if self.life < 0:
             self.kill()
-
 
 class Enemy(pg.sprite.Sprite):
     """
